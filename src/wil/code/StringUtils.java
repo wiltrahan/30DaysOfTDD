@@ -4,8 +4,15 @@ public class StringUtils {
 	
 	public int findNumberOfOccurences(String sentence, char characterToScanFor) {
 		
+		char[] stringToCheckAsCharArray = sentence.toCharArray();
+		int numOfOccurences = 0;
 		
-		return 2;
+		for(char letter : stringToCheckAsCharArray) {
+			if(letter == characterToScanFor) {
+				numOfOccurences++;
+			}
+		}		
+		return numOfOccurences;
 	}
 
 }
