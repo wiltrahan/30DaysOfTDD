@@ -4,6 +4,10 @@ public class StringUtils {
 	
 	public int findNumberOfOccurences(String sentence, char characterToScanFor) {
 		
+		if(Character.isLetter(characterToScanFor) == false) {
+			throw new IllegalArgumentException("characterToScanFor must be a char");
+		}
+		
 		char[] stringToCheckAsCharArray = sentence.toCharArray();
 		int numOfOccurences = 0;
 		
