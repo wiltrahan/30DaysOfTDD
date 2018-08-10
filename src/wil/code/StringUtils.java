@@ -4,19 +4,22 @@ public class StringUtils {
 	
 	public int findNumberOfOccurences(String sentence, char characterToScanFor) {
 		
-		if(Character.isLetter(characterToScanFor) == false) {
-			throw new IllegalArgumentException("characterToScanFor must be a char");
+	
+		try {
+			char[] stringToCheckAsCharArray = sentence.toCharArray();
+			int numOfOccurences = 0;
+			
+			for(char letter : stringToCheckAsCharArray) {
+				if(letter == characterToScanFor) {
+					numOfOccurences++;
+				}
+			}		
+			return numOfOccurences;
+			
 		}
-		
-		char[] stringToCheckAsCharArray = sentence.toCharArray();
-		int numOfOccurences = 0;
-		
-		for(char letter : stringToCheckAsCharArray) {
-			if(letter == characterToScanFor) {
-				numOfOccurences++;
-			}
+		catch (IllegalArgumentException e) {
+			throw new IllegalArgumentException("Must pass a char as second arg: " + e.getMessage());
 		}		
-		return numOfOccurences;
 	}
 
 }
