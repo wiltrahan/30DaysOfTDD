@@ -4,7 +4,6 @@ public class StringUtils {
 	
 	public int findNumberOfOccurences(String sentence, char characterToScanFor) {
 		
-	
 		try {
 			char[] stringToCheckAsCharArray = sentence.toCharArray();
 			int numOfOccurences = 0;
